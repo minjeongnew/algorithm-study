@@ -1,4 +1,5 @@
 def solution(n, lost, reserve):
+    # lost 이면서 reserve인 경우 제외하기
     reserve2 = [i for i in reserve if i not in lost]
     lost2 = [j for j in lost if j not in reserve]
 
