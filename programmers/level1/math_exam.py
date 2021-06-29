@@ -18,12 +18,21 @@ def solution(answers):
             r[2] += 1
 
     ans = []
-    for idx, v in enumerate(r):
-        ans.append([idx+1,v])
 
-    ans.sort(key=lambda x:x[1]) # value값에 대해서 정렬함
-    # 가장 큰 value
-    max_v = ans[-1][1]
-    res = [x[0]+1 for x in ans if x[1] == max_v]
+
+    # for idx, v in enumerate(r):
+    #     ans.append([idx+1,v])
+
+    # ans.sort(key=lambda x:x[1]) # value값에 대해서 정렬함
+    # # 가장 큰 value
+    # max_v = ans[-1][1]
+    # res = [x[0]+1 for x in ans if x[1] == max_v]
+
+    # 위 방법 말고
+    max_v = max(r) # 가장 큰 value
+    res = []
+    for idx, v in enumerate(r):
+        if v == max_v: # 최대값일 경우 학생 번호 추가
+            res.append(idx+1)
 
     return res
