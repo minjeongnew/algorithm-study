@@ -27,3 +27,19 @@ def solution(n, arr1, arr2):
             tmp += cmp(i, j)
         answer.append(tmp)
     return answer
+
+
+# 다른 사람 풀이
+# bin 내장 함수
+# rjust
+
+def solution2(n, arr1, arr2):
+    answer = []
+    for i, j in zip(arr1, arr2):
+        a12 = str(bin(i|j)[2:]) # | 비트 연산
+        a12 = a12.rjust(n, '0')
+        a12 = a12.replace('1', '#')
+        a12 = a12.replace('0', ' ')
+        answer.append(a12)
+
+    return answer
