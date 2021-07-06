@@ -11,9 +11,10 @@ def selection_sort(arr):
                 min_ = arr[j]
                 loc = j
         arr[i], arr[loc] = arr[loc], arr[i]
+        print(arr)
 
 
-arr = [8, 6, 5, 3, 1, 2, 7, 4]
+arr = [3,2,3,1] #
 
 selection_sort(arr)
 print(arr)
