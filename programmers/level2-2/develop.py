@@ -17,4 +17,5 @@ def solution(progresses, speeds):
 if __name__ == '__main__':
     p = [95, 90, 99, 99, 80, 99]
     s = [1, 1, 1, 1, 1, 1]
-    print(solution(p, s)) # 정답 [1, 3, 2]
+    print(solution(p, s))
+    # 정답 [1, 3, 2]
