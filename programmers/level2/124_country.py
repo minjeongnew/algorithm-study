@@ -8,4 +8,4 @@ def solution(n):
         else:
             answer += '124'[n%3-1]
         n//=3
-    return answer
+    return answer[::-1]
