@@ -15,7 +15,7 @@ def solution2(s):
     for i in s:
         if len(stack) == 0:
             stack.append(i)
-        else len(stack) > 0:
+        else:
             if stack[-1] == i:
                 stack.pop()
             else:
