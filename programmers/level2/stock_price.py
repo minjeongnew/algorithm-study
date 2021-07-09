@@ -7,4 +7,5 @@ def solution(prices):
                 break
             else:
                 answer[i] += 1
+
     return answer
