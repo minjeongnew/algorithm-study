@@ -8,9 +8,9 @@ def solution(n):
 
 
 if __name__ == '__main__':
-    n=[6, 10, 2]
+    n = [6, 10, 2]
     print(solution(n))
-    n=[3, 30, 34, 5, 9]
+    n = [3, 30, 34, 5, 9]
     print(solution(n))
-    n=[0,0,0,0]
+    n = [0, 0, 0, 0]
     print(solution(n))
