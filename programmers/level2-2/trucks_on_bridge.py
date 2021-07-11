@@ -10,12 +10,13 @@ def solution(bridge_length, weight, truck_weights):
         answer += 1
         old_truck = t_on_b.popleft() # 다리에서 나갈 트럭 또는 그냥 0
         cur -= old_truck
-        if cur + truck_weights[0] <= weight:
-            new_truck = truck_weights.popleft()
-            cur += new_truck
-            t_on_b.append(new_truck)
-        else:
-            t_on_b.append(0)
+        if truck_weights:
+            if cur + truck_weights[0] <= weight:
+                new_truck = truck_weights.popleft()
+                cur += new_truck
+                t_on_b.append(new_truck)
+            else:
+                t_on_b.append(0)
     return answer
 
 
