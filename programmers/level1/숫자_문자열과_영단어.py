@@ -18,12 +18,9 @@ def solution(s):
 
 def solution2(s):
     n_list = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
-    n_dic = dict()
-    for i in range(10):
-        n_dic[n_list[i]] = str(i)
     answer = s
-    for key, value in n_dic.items():
-        answer = answer.replace(key, value)
+    for i in range(10):
+        answer = answer.replace(n_list[i], str(i))
     return answer
 
 
