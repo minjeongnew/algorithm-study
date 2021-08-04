@@ -24,5 +24,5 @@ def solution(orders, course):
 
 if __name__ == '__main__':
     orders = ["ABCDE", "AB", "CD", "ADE", "XYZ", "XYZ", "ACD"]
-    course = [2,3,5]
+    course = [2, 3, 5]
     print(solution(orders, course))
