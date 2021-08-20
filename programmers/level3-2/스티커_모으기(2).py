@@ -5,7 +5,7 @@ def solution(sticker):
     dp1[1] = dp1[0]
     for i in range(2, len(sticker)-2):
         dp1[i] = max(dp1[i-1], dp1[i-2] + sticker[i])
-    v = max(dp1)
+    v1 = max(dp1)
 
     # 첫번째 스티커 포함 안 함
     dp2 = [0] * len(sticker)
