@@ -3,13 +3,14 @@
 using namespace std;
 
 
-int row[MAX];
+int col[MAX];
 int n;
 int total = 0;
 
 bool adjacent(int x) {
     for (int i = 0; i < x; i++) {
-        if (row[x] == row[i] || abs(row[x]-row[i]) == x-i) {
+        // 같은 행에 있으면 안됨 || 같은 대각선에 있으면 안됨
+        if (col[x] == col[i] || abs(col[x]-col[i]) == x-i) {
             return false;
         }
     }
@@ -19,7 +20,7 @@ void nqueens(int x) {
     if (x == n) total ++;
     else {
         for (int i=0; i < n; i++) {
-            row[x] = i; // 해당 위치에 퀸을 위치시킨다
+            col[x] = i; // 해당 위치에 퀸을 위치시킨다
             if (adjacent(x)) nqueens(x+1);
         }
     }
