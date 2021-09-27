@@ -2,11 +2,10 @@ import sys
 
 
 n, c = map(int, sys.stdin.readline().split())
-house = list(int(sys.stdin.readline().rstrip()) for _ in range(n))
+house = list(int(sys.stdin.readline()) for _ in range(n))
 house.sort()
-start = house[0]
+start = 1
 end = house[-1] - house[0]
-result = 0
 
 
 def router_counter(distance):
