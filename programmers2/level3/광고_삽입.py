@@ -3,8 +3,8 @@ def solution(play_time, adv_time, logs):
     play_time = str_to_int(play_time)
     adv_time = str_to_int(adv_time)
     all_time = [0] * (play_time + 1)
-    for l in logs:
-        start, end = l.split("-")
+    for log in logs:
+        start, end = log.split("-")
         start = str_to_int(start)
         end = str_to_int(end)
         all_time[start] += 1
@@ -19,7 +19,7 @@ def solution(play_time, adv_time, logs):
     max_time = 0
     for i in range(adv_time-1, play_time):
         if i >= adv_time:
-            if most_view < all_time[i] - all_time[i-adv_time]
+            if most_view < all_time[i] - all_time[i-adv_time]:
                 most_view = all_time[i] - all_time[i-adv_time]
                 max_time = i - adv_time + 1
         else:
@@ -31,7 +31,8 @@ def solution(play_time, adv_time, logs):
 
 def str_to_int(time):
     h, m, s = time.split(":")
-    return str(h) * 60 * 60 + str(m) * 60 + str(s)
+    return int(h) * 60 * 60 + int(m) * 60 + int(s)
+
 
 def int_to_str(time):
     h = time // 3600
