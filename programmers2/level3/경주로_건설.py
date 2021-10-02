@@ -1,33 +1,28 @@
-import sys
 from collections import deque
+
+d = {0: (0, 1), 1: (1,0), 2: (-1, 0), 3: (0, -1)} # 오른쪽 위 아래 왼쪽
+
+def solution(board):
+    return min(bfs(board, (0, 0, 0, 0)), bfs(board, (0, 0, 1, 0)))
 
 
 def bfs(board, start):
-    q = deque([start])
-    ln = len(board)
-    v = [[sys.maxsize]*ln for _ in range(ln)]
-    v[0][0] = 0
-    dx = [-1, 0, 1, 0]
-    dy = [0, 1, 0, -1]
+    start_x, start_y, start_head, start_cost = start
+    q = deque()
+    q.append(start)
+    n = len(board)
+    v = [[float('inf')*n for _ in range(n)]]
+    v[start_x][start_y] = 0
     while q:
         x, y, cost, head = q.popleft()
-        for idx in range(4):
-            nx = x + dx[idx]
-            ny = y + dy[idx]
-            if head != idx:
-                new_cost = cost + 600
-            else:
+        for k in range(4):
+            nx = x + d[k]
+            ny = y + d[k]
+            if head == k:
                 new_cost = cost + 100
-            if 0 <= nx < ln and 0 <= ny < ln and v[nx][ny] > new_cost and board[nx][ny] == 0:
+            else:
+                new_cost = cost + 600
+            if 0 <= nx < n and 0 <= ny < n and v[nx][ny] < new_cost and board[nx][ny] == 0:
+                q.append((nx, ny, k, new_cost))
                 v[nx][ny] = new_cost
-                q.append((nx, ny, new_cost, idx))
     return v[-1][-1]
-
-
-def solution(board):
-    return min(bfs(board, (0,0,0,1)), bfs(board, (0,0,0,2)))
-
-
-if __name__ == "__main__":
-    b = [[0,0,0,0,0,0], [0,1,1,1,1,0],[0,0,1,0,0,0],[1,0,0,1,0,1],[0,1,0,0,0,1],[0,0,0,0,0,0]]
-    print(solution(b))
