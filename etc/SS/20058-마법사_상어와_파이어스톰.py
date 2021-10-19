@@ -36,7 +36,7 @@ def go():
 
 # 얼음 덩어리 면적 세기
 def bfs():
-    answers = []
+    answers = [(0, 0)]
     ice_sum = 0
     v = [[0]*N for _ in range(N)]
     for i in range(N):
