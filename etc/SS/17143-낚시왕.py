@@ -39,6 +39,10 @@ def solve(fisher_c): # 하나의 과정
     for shark_size, shark_info in shark_dict.items():
         nx, ny, s, d = shark_info
         tmp_s = s
+        if d == 1 or d == 2:
+            tmp_s %=2*(R-1)
+        elif d ==3 or d == 4:
+            tmp_s %=2*(C-1)
         while tmp_s > 0:
             dx, dy = directions[d]
 
