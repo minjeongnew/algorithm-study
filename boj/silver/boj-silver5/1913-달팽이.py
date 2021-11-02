@@ -7,7 +7,8 @@ board = [[0]*n for _ in range(n)]
 direction = [(-1, 0), (0, 1), (1, 0), (0, -1)]
 mid = (n//2, n//2)
 board[mid[0]][mid[1]] = 1
-ax, ay = n//2, n//2
+ax, ay = n//2, n//2 # 찾고자 하는 위치가 1인 경우
+
 
 def solve():
     global ax, ay
